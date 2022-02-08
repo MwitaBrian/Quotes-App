@@ -18,6 +18,12 @@ export class QuoteComponent implements OnInit {
     this.quotes[index].toggleDetails = !this.quotes[index].toggleDetails;
   }
 
+  deleteQuote(isDelete, index){
+    if (isDelete) {
+      this.quotes.splice(index, 1);
+    }
+  }
+
   constructor() { }
 
   ngOnInit(): void {
