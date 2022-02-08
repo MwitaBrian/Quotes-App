@@ -1,6 +1,6 @@
 export class Quote {
-  id: number;
-  quote: string;
-  author: string;
-  name:  string;
+  toggleDetails: boolean;
+  constructor(public id: number, public quote: string, public author: string, public name: string ){
+    this.toggleDetails = false;
+  }
 }

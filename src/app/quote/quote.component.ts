@@ -9,10 +9,14 @@ import { Quote } from '../quote';
 export class QuoteComponent implements OnInit {
 
   quotes:Quote[] = [ 
-    {id:1, quote:'Manners maketh a man.', author:'William Horman', name:'Mwita'}, 
-    {id:2, quote:'The way to get started is to quit talking and begin doing.', author:'Walt Disney', name:'Brian'}, 
-    {id:3, quote:"Try to be a rainbow in someone's cloud.", author:'Maya Angelou', name:'Adams'}
+    new Quote (1, 'Manners maketh a man.', 'William Horman', 'Mwita'), 
+    new Quote (2, 'The way to get started is to quit talking and begin doing.', 'Walt Disney', 'Brian'), 
+    new Quote (3, "Try to be a rainbow in someone's cloud.", 'Maya Angelou', 'Adams')
   ];
+
+  toggleDetails(index){
+    this.quotes[index].toggleDetails = !this.quotes[index].toggleDetails;
+  }
 
   constructor() { }
 
