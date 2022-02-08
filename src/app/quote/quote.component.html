@@ -4,8 +4,8 @@
 
   <ul>
     <li *ngFor = 'let quote of quotes'>
-      {{quote.quote}} <br>
-      {{quote.author}}
+      {{quote.quote}}
+      <app-quote-details [quote]='quote'></app-quote-details>
     </li>
   </ul>
 </div>
