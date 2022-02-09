@@ -1,6 +1,10 @@
-<p>
-  {{quote.author}} 
-  <br>
-  Quote posted by: {{quote.name}}
-</p>
-<button (click)='deleteQuote(true)'>Delete Quote</button>
+<div>
+  <p id="details">
+    {{quote.author}} 
+    <br>
+    Quote posted by: {{quote.name}}
+  </p>
+  <p>
+  <button (click)='deleteQuote(true)' class="btn btn-outline-danger">Delete Quote</button>
+  </p>
+</div>
