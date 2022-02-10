@@ -1,17 +1,21 @@
 <div class="container-fluid">
-  <h2>Add a new Quote</h2>
+  <h3 class="text-center">Add a new Quote</h3>
   <hr>
-  <form action="">
+  <form action="" #quoteForm='ngForm'>
     <div class="form-group">
-      <label for="name">Quote</label>
-      <textarea name="name" class="form-control" rows="4" required></textarea>
-    </div>
+      <label for="name">Quote:</label>
+      <textarea name="quote" id="quote" class="form-control" rows="4" [(ngModel)]="newQuote.quote" required></textarea>
+    </div> 
+    <!-- Testing to see if we get any data -->
+    Display: {{newQuote.quote}}
+    <br><br>
     <div class="form-group">
-      <label for="details">Quote Author</label>
+      <label for="details">Quote Author:</label>
       <input type="text" class="form-control" id="details">
     </div>
+    <br>
     <div class="form-group">
-      <label for="writer">Posted by</label>
+      <label for="writer">Posted by:</label>
       <input type="text" class="form-control">
     </div>
   </form>
