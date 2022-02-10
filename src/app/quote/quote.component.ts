@@ -14,6 +14,12 @@ export class QuoteComponent implements OnInit {
     new Quote (3, "Try to be a rainbow in someone's cloud.", 'Maya Angelou', 'Adams')
   ];
 
+  addNewQuote(quote){
+    let quoteLength = this.quotes.length;
+    quote.id = quoteLength+1;
+    this.quotes.push(quote)
+  }
+
   toggleDetails(index){
     this.quotes[index].toggleDetails = !this.quotes[index].toggleDetails;
   }
