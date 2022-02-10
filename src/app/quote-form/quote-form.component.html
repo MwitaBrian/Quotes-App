@@ -1,23 +1,37 @@
 <div class="container-fluid">
   <h3 class="text-center">Add a new Quote</h3>
   <hr>
+
   <form action="" #quoteForm='ngForm'>
     <div class="form-group">
-      <label for="name">Quote:</label>
-      <textarea name="quote" id="quote" class="form-control" rows="4" [(ngModel)]="newQuote.quote" required></textarea>
+      <label for="quote">Quote:</label>
+      <textarea name="quote" id="quote" class="form-control" rows="4" [(ngModel)]="newQuote.quote" #quote='ngModel' required></textarea>
+      <div [hidden]="quote.valid || quote.pristine" class="alert alert-danger">
+        <p>Quote is required</p>
+      </div>
     </div> 
+
     <!-- Testing to see if we get any data -->
     Display: {{newQuote.quote}}
     <br><br>
+
     <div class="form-group">
-      <label for="details">Quote Author:</label>
-      <input type="text" class="form-control" id="details">
+      <label for="author">Quote Author:</label>
+      <input type="text" name="author" class="form-control" id="author" [(ngModel)]="newQuote.author" #author='ngModel' required>
+      <div [hidden]="author.valid || author.pristine" class="alert alert-danger">
+        <p>Author's name is required</p>
+      </div>
     </div>
+
     <br>
     <div class="form-group">
-      <label for="writer">Posted by:</label>
-      <input type="text" class="form-control">
+      <label for="name">Posted by:</label>
+      <input type="text" name="name" class="form-control" id="name" [(ngModel)]="newQuote.name" #name='ngModel' required>
+      <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+        <p>Name is required</p>
+      </div>
     </div>
+
     <br>
     <button type="submit" class="btn btn-success">Add Quote</button>
   </form>
